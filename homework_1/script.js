@@ -16,6 +16,10 @@ let firstName = prompt(`What's your name?`, `Your name`);
 let userCountry = prompt(`Where are you from?`, `Enter your country`);
 let userCity = prompt(`Where are you from?`, `Enter your city`);
 
-alert(`Hello, your name is ${firstName}. You live in ${userCity}, ${userCountry}`);
+console.log(`Hello, your name is ${firstName}. You live in ${userCity}, ${userCountry}`);
+
+// Task 3
+
+
 
 
