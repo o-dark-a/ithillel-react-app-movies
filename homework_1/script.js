@@ -20,6 +20,12 @@ console.log(`Hello, your name is ${firstName}. You live in ${userCity}, ${userCo
 
 // Task 3
 
+// Write a program that prints the type of three different variables to the console.
 
+let number = 156798;
+let string = `IT School Hillel`;
+let boolean = false;
 
-
+console.log(`value: ${number}; type: ${typeof number}`);
+console.log(`value: ${string}; type: ${typeof string}`);
+console.log(`value: ${boolean}; type: ${typeof boolean}`);
