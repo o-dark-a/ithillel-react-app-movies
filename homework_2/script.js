@@ -53,3 +53,16 @@ let uppercaseStr = str.toUpperCase();
 let lowercaseStr = str.toLowerCase();
 
 console.log(`You wrote: "${str}". It's length ${lengthStr}\nThis is your big string: "${uppercaseStr}" \n\t And this is a small one: "${lowercaseStr}"`)
+
+// Task 4
+
+// There are 500 sheets in a pack of paper. 1200 sheets are used in the office per week.
+// What is the least amount of reams of paper you need to buy for the office for 8 weeks?
+// Display the result in the console (console.log() command).
+
+const sheetsInReamPaper = 500;
+const consumptionPerWeek = 1200;
+const weeksAmount = 8;
+const leastPaperReamsPerWeek = Math.ceil(1200*8 / 500);
+
+console.log(`For 8 weeks you need at least ${leastPaperReamsPerWeek} reams of paper`);
