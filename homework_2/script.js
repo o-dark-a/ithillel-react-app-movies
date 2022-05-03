@@ -35,3 +35,21 @@ console.log(`${x} * ${y} = ${x * y}`);
 console.log(`${x} / ${y} = ${x / y}`);
 console.log(`${x} - ${y} = ${x - y}`);
 console.log(`${x} + ${y} = ${x + y}`);
+
+// Task 3
+
+// Create a "str" variable and store the value from prompt() into it.
+// Convert it to uppercase, count the length of the string.
+// Output this data to the console in the format
+// (all this should be written in one console.log()):
+
+// You wrote: "<str>" \ it's length <number of str characters>.
+// This is your big string: "<STR>".
+//     And this is a small one: "<str>" 
+
+let str = prompt('Write some text', 'blablabla..');
+let lengthStr = str.length;
+let uppercaseStr = str.toUpperCase();
+let lowercaseStr = str.toLowerCase();
+
+console.log(`You wrote: "${str}". It's length ${lengthStr}\nThis is your big string: "${uppercaseStr}" \n\t And this is a small one: "${lowercaseStr}"`)
