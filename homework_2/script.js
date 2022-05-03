@@ -66,3 +66,18 @@ const weeksAmount = 8;
 const leastPaperReamsPerWeek = Math.ceil(1200*8 / 500);
 
 console.log(`For 8 weeks you need at least ${leastPaperReamsPerWeek} reams of paper`);
+
+// Task 5
+
+// Write a program that calculates the percentage of the loan amount.
+// We get the percentage and the amount from the user (prompt() command),
+// output the result to the console (console.log() command).
+// Keep in mind that the user can send the percentage as 10 or as 10%.
+
+const percent = parseInt(prompt('Enter percentage', '1%'));
+const currency = prompt('Enter currency', '$');
+const sum = +prompt('Enter the loan amount', 1000);
+let loanAmountPercentage = percent * sum / 100;
+
+console.log(`The interest on the loan will be ${loanAmountPercentage} ${currency}`);
+
