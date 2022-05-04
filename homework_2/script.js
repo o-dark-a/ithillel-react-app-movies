@@ -74,7 +74,7 @@ console.log(`For 8 weeks you need at least ${leastPaperReamsPerWeek} reams of pa
 // output the result to the console (console.log() command).
 // Keep in mind that the user can send the percentage as 10 or as 10%.
 
-const percent = parseInt(prompt('Enter percentage', '1%'));
+const percent = parseFloat(prompt('Enter percentage', '1%'));
 const currency = prompt('Enter currency', '$');
 const sum = +prompt('Enter the loan amount', 1000);
 let loanAmountPercentage = percent * sum / 100;
