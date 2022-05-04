@@ -31,10 +31,15 @@ let x, y;
 x = +prompt('Enter first number');
 y = +prompt('Enter second number');
 
-console.log(`${x} * ${y} = ${x * y}`);
-console.log(`${x} / ${y} = ${x / y}`);
-console.log(`${x} - ${y} = ${x - y}`);
-console.log(`${x} + ${y} = ${x + y}`);
+let NumbersProduct = (x * y).toFixed();
+let NumbersQuotient = (x / y).toFixed();
+let NumbersDifference = (x - y).toFixed();
+let NumbersSum = (x + y).toFixed();
+
+console.log(`${x} * ${y} = ${NumbersProduct}`);
+console.log(`${x} / ${y} = ${NumbersQuotient}`);
+console.log(`${x} - ${y} = ${NumbersDifference}`);
+console.log(`${x} + ${y} = ${NumbersSum}`);
 
 // Task 3
 
