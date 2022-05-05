@@ -66,3 +66,33 @@ if (isNaN(userValue)) {
   console.log(`Is equal PI: ${isUserValEqualPI}`);
 
 }
+
+// Task 3
+
+// Write a program that prompts the user to enter a password and verifies
+// that the password is secure under the following conditions:
+//   - the password must be at least six characters long
+//   - the password must not be equal to qwerty or 123456
+//   - the password must be at least one uppercase letter
+
+// If all the conditions are met, display the message "Strong" in the console.
+// If the password has at least one uppercase letter but consists of five characters,
+// display the message "Middle" in the console.
+// In all other cases, display the message "Weak" in the console.
+
+let userPassword = prompt('Please, enter your password');
+let userPassLength = userPassword.length;
+let isCapitalLetter = userPassword !== userPassword.toLowerCase();
+
+if (userPassLength >= 6 && userPassword !== 'qwerty' && userPassword !== '123456' && isCapitalLetter) {
+  console.log('Strong');
+} else if (userPassLength === 5 && isCapitalLetter) {
+  console.log('Middle');
+} else {
+  console.log('Weak');
+}
+
+
+
+
+
