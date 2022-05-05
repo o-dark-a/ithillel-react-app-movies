@@ -20,7 +20,7 @@ if (userBusNumber === null) { // canceled the operation
 } else if (+userBusNumber === 0) { // user entered 0 (zero)
   console.log('Bus number 0 doesn\'t exist, as well as platform 9¾ :)\nTry entering a different number.');
 } else if (isNaN(userBusNumber)) { // user entered value that cann't be converted to a number (NaN)
-  console.log('The entered value must be a number. Try again.');
+  console.log('Entered value must be a number. Try again.');
 } else {
 
   switch (+userBusNumber) {
@@ -32,5 +32,37 @@ if (userBusNumber === null) { // canceled the operation
     default:
       console.log(`Please wait. Bus №${userBusNumber} will arrive later.`);
   }
+
+}
+
+// Task 2
+
+// Write a program that receives a number from the user and compares it with the number Pi. (Math.PI).
+// Compare whether this number is:
+// - greater than the number Pi
+// - less than the number Pi
+// - equal to the number Pi
+
+// If the value you entered is not a number, display an error message in the console.
+// Display all results in the following format:
+//   You entered: <number> 
+//   Is greater then PI: true
+//   Is less then PI: false
+//   Is equal PI: false
+
+let userValue = +prompt('Enter a number, please:');
+
+if (isNaN(userValue)) {
+  console.error('Entered value must be a number.');
+} else {
+
+  let isUserValGreaterPI = userValue > Math.PI;
+  let isUserValLessPI = userValue < Math.PI;
+  let isUserValEqualPI = userValue === Math.PI;
+
+  console.log(`You entered: ${userValue}`);
+  console.log(`Is greater then PI: ${isUserValGreaterPI}`);
+  console.log(`Is less then PI: ${isUserValLessPI}`);
+  console.log(`Is equal PI: ${isUserValEqualPI}`);
 
 }
