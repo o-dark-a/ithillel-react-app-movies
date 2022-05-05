@@ -120,3 +120,20 @@ if (isNaN(apartmentNumber) || !Number.isInteger(apartmentNumber) || apartmentNum
   
   console.log(`The ${apartmentNumber} apartment is located in the ${entranceNum} entrance on the ${floorNum} floor`);
 }
+
+// Task 5
+
+// Write a program that asks the user for the temperature in Celsius and converts it to Fahrenheit.
+// Display the result in the console.
+// Formula for conversion: Celsius x 1.8 + 32 = Fahrenheit
+// tips: degrees Celsius in Unicode will be "\ u2103" to display it in a string.
+// Try to find a symbol to indicate the degree of Fahrenheit.
+
+let userTempCelsius = parseFloat(prompt('Enter temperature value'));
+
+if (isNaN(userTempCelsius)) {
+  console.error('Incorrect data entered');
+} else {
+  let tempFahrenheit = (userTempCelsius * 1.8 + 32).toFixed(1);
+  console.log(`${userTempCelsius}\u2103 is ${tempFahrenheit}\u2109`)
+}
