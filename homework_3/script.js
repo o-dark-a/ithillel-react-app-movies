@@ -92,7 +92,31 @@ if (userPassLength >= 6 && userPassword !== 'qwerty' && userPassword !== '123456
   console.log('Weak');
 }
 
+// Task 4
 
+// Write a program that asks the user for the apartment number (command prompt ())
+// and displays the floor number and entrance number in the console.
+// In one entrance there are 9 floors with 3 apartments on each floor.
+// Display the result (floor and entrance) in the console (command console.log ()).
 
+let apartmentNumber = +prompt('Enter the apartment naumber');
 
+let floorsNumInOneEntrance = 9;
+let apartmsNumInOneFloor = 3;
+let apartmsNumInOneEntrance = floorsNumInOneEntrance * apartmsNumInOneFloor;
 
+let entranceNum;
+let floorNum;
+
+if (isNaN(apartmentNumber) || !Number.isInteger(apartmentNumber) || apartmentNumber <= 0) {
+  console.error('Incorrect data entered');
+} else {
+  entranceNum = Math.ceil(apartmentNumber / apartmsNumInOneEntrance);
+  floorNum = Math.ceil(apartmentNumber / apartmsNumInOneFloor);
+
+  if (apartmentNumber > apartmsNumInOneEntrance) { // if the apartment is not in the first entrance
+    floorNum = Math.ceil((apartmentNumber - apartmsNumInOneEntrance * (entranceNum - 1)) / apartmsNumInOneFloor);
+  }
+  
+  console.log(`The ${apartmentNumber} apartment is located in the ${entranceNum} entrance on the ${floorNum} floor`);
+}
