@@ -8,24 +8,36 @@
 
 const userName = prompt('What\'s your name?');
 
-// 1st option
-for (let i = 0; i < 4; i++) {
+if (isNaN(userName)) { // checking: not a number or an empty string
 
-  i === 2 ? console.log(`Happy birthday, dear ${userName}`) : console.log('Happy birthday to you');
+  // 1st option
+  for (let i = 0; i < 4; i++) {
 
-  // if (i !== 2) {
-  //   console.log('Happy birthday to you');
-  // } else {
-  //   console.log(`Happy birthday, dear ${userName}`);
-  // }
-  
+    i === 2 ? console.log(`Happy birthday, dear ${userName}`) : console.log('Happy birthday to you');
+
+    // if (i !== 2) {
+    //   console.log('Happy birthday to you');
+    // } else {
+    //   console.log(`Happy birthday, dear ${userName}`);
+    // }
+
+  }
+
+  // 2nd option
+  let i = 0;
+  while (i <= 3) {
+    console.log(`Happy birthday${ i !== 2 ? ' to you' : `, dear ${userName}`}`);
+    i++;
+  }
+
+} else {
+  console.error('Please enter correct data.');
 }
 
-// 2nd option
-let i = 0;
-while (i <= 3) {
-  console.log(`Happy birthday${ i !== 2 ? ' to you' : `, dear ${userName}`}`);
-  i++;
-}
+// Task 2
+
+// Generate the string '. #. #. #. #. #. #. #'.
+// Using the for() loop.
+// The required number of '. #' iterations is specified by the user via the prompt() command.
 
 
