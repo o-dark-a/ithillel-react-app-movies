@@ -76,3 +76,19 @@ for (let i = 1; i < userNumber; i++) {
 }
 
 console.log(sum);
+
+// Task 4
+
+// Write an infinite loop that ends with the break command when Math.random ()> 0.7.
+// Display the number on which the cycle is interrupted in the console
+// and display the number of iterations of the cycle in the console.
+// Loop was finished because of: <number>
+// Number of attempts: <number>
+
+for (let i = 1; ; i++) {
+  let randomNum = Math.random().toFixed(1);
+  if (randomNum < 0.7) {
+    console.log(`Loop was finished because of: ${randomNum} < 0.7\nNumber of attempts: ${i}`);
+    break;
+  }
+}
