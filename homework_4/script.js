@@ -92,3 +92,27 @@ for (let i = 1; ; i++) {
     break;
   }
 }
+
+// Task 5
+
+// Write a cycle from 1 to 50, which will display numbers alternately from 1 to 50, with:
+// If the number is divisible by 3 without remainder, then print not this number, but the word 'Fizz';
+// If the number is divisible by 5 without a remainder, print the word 'Buzz' instead of the number;
+// If the number is divisible by 3 and 5 at the same time, print the word 'FizzBuzz' instead of this number; 
+
+for (let i = 1; i <= 50; i++) {
+  switch (true) {
+    case !(i % 3 || i % 5):
+      console.log('FizzBuzz');
+      break;
+    case !(i % 3):
+      console.log('Fizz');
+      break;
+    case !(i % 5):
+      console.log('Buzz');
+      break;
+    default:
+      console.log(i);
+      break;
+  }
+}
