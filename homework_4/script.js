@@ -52,5 +52,27 @@ if (isNaN(numItetations) && !Number.isInteger(numItetations) && numItetations <=
   }
 
   console.log(userStr);
-  
+
 }
+
+// Task 3
+
+// Write a program that asks the user for a number and sums all the odd numbers to that number
+// If the user did not enter a number or a negative number or 0,
+// call the prompt () command with the text: 
+// "Invalid. You should enter a number" until the correct data format is entered by the user.
+// Display the result in the console.
+
+let userNumber = +prompt('Enter a number');
+
+while (isNaN(userNumber) || !Number.isInteger(userNumber) || userNumber <= 0) {
+  userNumber = +prompt('Invalid. You should enter a number');
+}
+
+let sum = 0;
+for (let i = 1; i < userNumber; i++) {
+  console.log(i);
+  if (i % 2) sum += i;
+}
+
+console.log(sum);
