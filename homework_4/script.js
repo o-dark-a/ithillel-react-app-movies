@@ -40,4 +40,17 @@ if (isNaN(userName)) { // checking: not a number or an empty string
 // Using the for() loop.
 // The required number of '. #' iterations is specified by the user via the prompt() command.
 
+let numItetations = prompt('Please, enter iterations number');
 
+if (isNaN(numItetations) && !Number.isInteger(numItetations) && numItetations <= 0) {
+  console.error('Enter correct data please');
+} else {
+
+  let userStr = '';
+  for (let i = 0; i < numItetations; i++) {
+    userStr += '. #';
+  }
+
+  console.log(userStr);
+  
+}
