@@ -6,6 +6,8 @@
 // Happy birthday, dear <name>
 // Happy birthday to you
 
+/*
+
 const userName = prompt('What\'s your name?');
 
 if (isNaN(userName)) { // checking: not a number or an empty string
@@ -115,4 +117,21 @@ for (let i = 1; i <= 50; i++) {
       console.log(i);
       break;
   }
+}
+
+*/
+
+// Task 6
+
+// Write a program that will find all the years when January 1 falls on a Sunday
+// between 2015 and 2050 inclusive (note that January 1 is in quotation marks).
+// "1st of January" is being a Sunday in <year>
+
+for (let i = 2015; i <= 2050; i++) {
+
+  let date = new Date(i, 0, 1);
+  let weekDayNum = date.getDay();
+  
+  if (weekDayNum === 0) console.log(`"1st of January" is being a Sunday in ${i}`);
+
 }
