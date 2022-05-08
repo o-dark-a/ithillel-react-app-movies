@@ -46,9 +46,11 @@ if (isNaN(numItetations) && !Number.isInteger(numItetations) && numItetations <=
   console.error('Enter correct data please');
 } else {
 
+  const symbol = '. #';
   let userStr = '';
+  
   for (let i = 0; i < numItetations; i++) {
-    userStr += '. #';
+    userStr += symbol;
   }
 
   console.log(userStr);
