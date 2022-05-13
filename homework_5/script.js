@@ -30,3 +30,40 @@ if (Number.isInteger(userNumber) && userNumber >= 0 && userNumber <= 59) {
 } else {
   console.log('Please enter correct data (this must be a number from 0 to 59)');
 }
+
+// Task 2
+
+// Write a program that asks the user for a number and displays the following information about it in the console:
+// - whether it is positive or negative;
+// - how many digits in this number;
+// - if the number is positive, print the sum of its digits.
+
+// If number === 0, it will display '0, length: 1'
+// If number === 100500, it will display 'positive, length: 6, sum: 6'
+// If number === -50, it will display 'negative, length: 2'
+
+let userNum = +prompt('Enter a number please', 0);
+
+if (Number.isInteger(userNum)) {
+
+  const userNumStr = String(userNum);
+  const userNumLength = userNumStr.length;
+  const firstStrChar = userNumStr[0];
+
+  let isPositive = firstStrChar !== '-' ? true : false;
+  let numberSign = isPositive ? 'positive' : 'negative';
+  let digitsSum = 0;
+
+  if (isPositive) {
+    for (let i= 0; i < userNumLength; i++) {
+      digitsSum += +userNumStr[i];
+    }
+  }
+
+  if (userNum !== 0) {
+    console.log(`${numberSign}, length: ${isPositive ? userNumLength : userNumLength -1}${isPositive ? ', sum: ' + digitsSum : ''}`);
+  } else {
+    console.log(`${userNum}, length: ${userNumLength}`);
+  }
+
+}
