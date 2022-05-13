@@ -167,3 +167,25 @@ if (!isEnoughMoneyForAirpods) {
     console.error('Enter valid data (not an empty string and not a number less than 0 or equal to it)');
   }
 }
+
+// Task 7
+
+// Write a loop that fills the value string with numbers from 1000 to 2000
+// and add '& #' characters to each number. Check the result in the browser, run the index.html file.
+
+// Response format:
+// console.log(value); // &#1000 &#1001 &#1002 ... &#1999 &#2000
+// Also check the code for values from 7000 to 10000
+
+let result = document.getElementById('result');
+let value = '';
+
+let startValue = 1000;
+let endValue = 2000;
+let specSymbol = '&#';
+
+for (startValue; startValue <= endValue; startValue++) {
+  value += `&#${startValue} `;
+}
+
+result.innerHTML = value;
