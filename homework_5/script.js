@@ -113,3 +113,27 @@ if (!isEnoughMoneyForAirpods) {
 //     console.log('You have enough money for everything. WOW!');
 //     break;
 // }
+
+// Task 4
+
+// Write a program that asks the user for a number, displays all the numbers from 1 to that number,
+// and raises each PAIR of numbers to the power of 2.
+// If number === 5, it will display '1 4 3 16 5'
+
+{
+  const userNumber = +prompt('Enter a number');
+
+  if (Number.isInteger(userNumber) && userNumber > 0) {
+
+    let resultStr = '';
+    for (let i = 1; i <= userNumber; i++) {
+      (i % 2) ? resultStr += i + ' ' : resultStr += Math.pow(i, 2) + ' ';
+    }
+
+    console.log(resultStr);
+
+  } else {
+    console.error('Enter valid data (not an empty string and not 0)');
+  }
+
+}
