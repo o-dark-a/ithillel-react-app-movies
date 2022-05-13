@@ -67,3 +67,49 @@ if (Number.isInteger(userNum)) {
   }
 
 }
+
+// Task 3
+
+// It is known that a trip to the Maldives costs $ 3,000, and buy new AirPods - $ 300.
+// Write a program that asks the user for a number (in $) and displays in the console information that
+// he can buy with this money.
+
+// If money === 200$, it will display 'You can't do anything. I'm sorry :( ';
+// If money === 300$, it will display 'You can buy only AirPods';
+// If money === 3200.50$, it will display 'You can go on vacation or buy AirPods! What are you waiting for? ';
+// If money === 4300.53$, it will display 'You have enough money for everything. WOW!'.
+
+const userMoneyAmount = +parseFloat(prompt('How much money do you have, buddy?'));
+
+let airpodsPrice = 300;
+let maldivesCosts = 3000;
+
+let isEnoughMoneyForAirpods = userMoneyAmount >= airpodsPrice ? true : false;
+let isEnoughMoneyForMaldives = userMoneyAmount >= maldivesCosts ? true : false;
+let isEnoughMoneyForBoth = userMoneyAmount >= airpodsPrice + maldivesCosts ? true : false;
+
+if (!isEnoughMoneyForAirpods) {
+  console.log('You can\'t do anything. I\'m sorry :(');
+} else if (isEnoughMoneyForAirpods && !isEnoughMoneyForMaldives) {
+  console.log('You can buy only AirPods');
+} else if (isEnoughMoneyForMaldives && !isEnoughMoneyForBoth) {
+  console.log('You can go on vacation or buy AirPods! What are you waiting for?');
+} else {
+  console.log('You have enough money for everything. WOW!');
+}
+
+// by switch:
+// switch (true) {
+//   case (!isEnoughMoneyForAirpods):
+//     console.log('You can\'t do anything. I\'m sorry :(');
+//     break;
+//   case (isEnoughMoneyForAirpods && !isEnoughMoneyForMaldives):
+//     console.log('You can buy only AirPods');
+//     break;
+//   case (isEnoughMoneyForMaldives && !isEnoughMoneyForBoth):
+//     console.log('You can go on vacation or buy AirPods! What are you waiting for?');
+//     break;
+//   default:
+//     console.log('You have enough money for everything. WOW!');
+//     break;
+// }
