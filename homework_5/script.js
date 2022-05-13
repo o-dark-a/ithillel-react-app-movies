@@ -133,7 +133,37 @@ if (!isEnoughMoneyForAirpods) {
     console.log(resultStr);
 
   } else {
-    console.error('Enter valid data (not an empty string and not 0)');
+    console.error('Enter valid data (not an empty string and not a number less than 0 or equal to it)');
   }
 
+}
+
+// Task 6
+
+// Write a program that asks the user for a character and a number and outputs that character sequentially,
+// increasing each time by 1 until the number of characters in the line is equal to that number.
+
+// If symbol === @, number === 6, it will output:
+// @
+// @@
+// @@@
+// @@@@
+// @@@@@
+// @@@@@@
+
+{
+  const userChar = prompt('Please enter any character');
+  const userNumber = +prompt('Please enter a number');
+
+  if (Number.isInteger(userNumber) && userNumber > 0) {
+
+    let resultStr = '';
+    for (let i = 0; i < userNumber; i++) {
+      resultStr += userChar;
+      console.log(resultStr);
+    }
+
+  } else {
+    console.error('Enter valid data (not an empty string and not a number less than 0 or equal to it)');
+  }
 }
