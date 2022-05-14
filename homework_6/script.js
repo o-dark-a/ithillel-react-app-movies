@@ -45,3 +45,80 @@ if (Number.isInteger(userNumber) && userNumber > 0) {
 } else {
   console.log('Enter valid data please');
 }
+
+// Task 3
+
+// Include the employee.js file and run the following tasks:
+
+// a) create an array consisting of the full names of all employees;
+
+const fullNames = [];
+
+  for (let i = 0; i < employees.length; i++) {
+    fullNames[i] = `${employees[i].name} ${employees[i].surname}`;
+  }
+
+console.log(fullNames);
+
+// b) find the average of all employee salaries;
+
+let averageSalary = 0;
+let salarySum = 0;
+
+for (let employee of employees) {
+  salarySum += employee.salary;
+}
+
+averageSalary = (salarySum / employees.length).toFixed();
+
+console.log(averageSalary);
+
+// c) display the name of the privileged man (key isPrivileged = true) with the highest salary;
+
+let maxPrivilegesMan = '';
+let maxSalary = 0;
+let i = 0;
+
+for (let employee of employees) {
+  if (employee.gender === 'male' && employee.isPrivileges) {
+    
+    if (employee.salary > maxSalary) {
+      maxSalary = employee.salary;
+      maxPrivilegesMan = `${employee.name} ${employee.surname}`;
+    }
+
+    i++;
+  }
+}
+
+console.log(`${maxPrivilegesMan} has privileges and the highest salary.`);
+
+// d) Enter in the console the full names (first name + last name) of the two women with the least work experience
+// (workExperience key);
+
+let firstWoman = employees[0];
+let secondWoman = employees[1];
+let thirdWoman = 0;
+
+for (let i = 2; i < employees.length; i++) {
+
+  thirdWoman = employees[i];
+
+  if (secondWoman.workExperience < firstWoman.workExperience) {
+    firstWoman = secondWoman;
+    secondWoman = thirdWoman;
+  } else {
+    secondWoman = thirdWoman;
+  }
+
+}
+
+console.log(`Name of the first female employee with the least work experience: ${firstWoman.name} ${firstWoman.surname}`);
+console.log(`Name of the second female employee with the least work experience: ${secondWoman.name} ${secondWoman.name}`);
+
+// e) Display in the console information on how much employees have earned during the entire period
+// of work in one line. Answer format: <first name last name> - <amount>.
+
+for (let employee of employees) {
+  console.log(`${employee.name} ${employee.surname} - ${employee.salary * employee.workExperience}`);
+}
