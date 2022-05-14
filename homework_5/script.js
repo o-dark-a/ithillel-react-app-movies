@@ -50,7 +50,7 @@ if (Number.isInteger(userNum)) {
   const userNumLength = userNumStr.length;
   const firstStrChar = userNumStr[0];
 
-  let isPositive = firstStrChar !== '-' ? true : false;
+  let isPositive = firstStrChar !== '-';
   let numberSign = isPositive ? 'positive' : 'negative';
   let digitsSum = 0;
 
@@ -84,9 +84,9 @@ const userMoneyAmount = +parseFloat(prompt('How much money do you have, buddy?')
 let airpodsPrice = 300;
 let maldivesCosts = 3000;
 
-let isEnoughMoneyForAirpods = userMoneyAmount >= airpodsPrice ? true : false;
-let isEnoughMoneyForMaldives = userMoneyAmount >= maldivesCosts ? true : false;
-let isEnoughMoneyForBoth = userMoneyAmount >= airpodsPrice + maldivesCosts ? true : false;
+let isEnoughMoneyForAirpods = userMoneyAmount >= airpodsPrice;
+let isEnoughMoneyForMaldives = userMoneyAmount >= maldivesCosts;
+let isEnoughMoneyForBoth = userMoneyAmount >= airpodsPrice + maldivesCosts;
 
 if (!isEnoughMoneyForAirpods) {
   console.log('You can\'t do anything. I\'m sorry :(');
