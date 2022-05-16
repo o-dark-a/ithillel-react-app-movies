@@ -22,3 +22,22 @@ function parseDate() {
 }
 
 parseDate();
+
+// Task 2
+
+// Write a function getRandomInteger (min, max), which returns
+// an integer in the specified range of numbers passed in the arguments of the function.
+// Write a program that asks the user for an integer and compares it to the number created using the getRandomInteger function.
+// Якщо користувач ввів невірне число, виведіть в консоль повідомлення про помилку.
+// Якщо числа співпадають, вивести в консоль Good work, якщо ні - Not matched.
+
+const userNum = +prompt('Enter a number please');
+const randomNum = getRandomInteger(1, 3);
+
+(userNum === randomNum) ? console.log('Good work!') : console.log('Not matched');
+
+function getRandomInteger(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
