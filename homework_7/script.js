@@ -41,3 +41,44 @@ function getRandomInteger(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+// Task 3
+
+// Write a function getDecimalNumber(arr), which takes as an argument an array of numbers 0 or 1,
+// and returns a number in the decimal system equivalent to the specified.
+// For example, the array [0, 0, 0, 1] is considered as 0001 and is equal to 1.
+
+// Examples to check:
+//   getDecimalNumber([0, 0, 0, 1]) // 1
+//   getDecimalNumber([0, 0, 1, 0]) // 2
+//   getDecimalNumber([1, 1, 1, 1]) // 15
+//   getDecimalNumber([1, 1, 1, 0, 0, 1]) // 57
+
+// The array can be of any length.
+// The array should not contain any data other than the numbers 0 and 1.
+// Do not use number.toString() in this task.
+
+
+const arr = [1, 1, 1, 0, 0, 1];
+let result = 0;
+
+function getDecimalNumber(arr) {
+
+  let strOfArr = '';
+
+  for (let item of arr) {
+    if (item !== 0 && item !== 1) {
+      console.error('Incorrect data sent: function getDecimalNumber(arr) expects an array consisting of only 0 and 1.');
+      return;
+    }
+    strOfArr += item;
+  }
+
+  result = parseInt(strOfArr, 2);
+
+  return result;
+}
+
+getDecimalNumber(arr)
+
+console.log(getDecimalNumber(arr));
