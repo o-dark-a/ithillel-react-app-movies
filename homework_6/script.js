@@ -80,13 +80,9 @@ let maxSalary = 0;
 let i = 0;
 
 for (let employee of employees) {
-  if (employee.gender === 'male' && employee.isPrivileges) {
-    
-    if (employee.salary > maxSalary) {
-      maxSalary = employee.salary;
-      maxPrivilegesMan = `${employee.name} ${employee.surname}`;
-    }
-
+  if (employee.gender === 'male' && employee.isPrivileges && employee.salary > maxSalary) {
+    maxSalary = employee.salary;
+    maxPrivilegesMan = `${employee.name} ${employee.surname}`;
     i++;
   }
 }
@@ -114,7 +110,7 @@ for (let i = 2; i < employees.length; i++) {
 }
 
 console.log(`Name of the first female employee with the least work experience: ${firstWoman.name} ${firstWoman.surname}`);
-console.log(`Name of the second female employee with the least work experience: ${secondWoman.name} ${secondWoman.name}`);
+console.log(`Name of the second female employee with the least work experience: ${secondWoman.name} ${secondWoman.surname}`);
 
 // e) Display in the console information on how much employees have earned during the entire period
 // of work in one line. Answer format: <first name last name> - <amount>.
