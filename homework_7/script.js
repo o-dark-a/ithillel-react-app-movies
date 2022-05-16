@@ -28,8 +28,8 @@ parseDate();
 // Write a function getRandomInteger (min, max), which returns
 // an integer in the specified range of numbers passed in the arguments of the function.
 // Write a program that asks the user for an integer and compares it to the number created using the getRandomInteger function.
-// Якщо користувач ввів невірне число, виведіть в консоль повідомлення про помилку.
-// Якщо числа співпадають, вивести в консоль Good work, якщо ні - Not matched.
+// If the user enters an incorrect number, display an error message in the console.
+// If the numbers match, display in the console 'Good work', if not - 'Not matched'.
 
 const userNum = +prompt('Enter a number please');
 const randomNum = getRandomInteger(1, 3);
@@ -81,7 +81,44 @@ function getDecimalNumber(arr) {
 console.log(getDecimalNumber(arr));
 
 // Task 4
+// Write a program that asks the user for a number and divides it by 2 times until it is <= 50.
+// Display the final number and the number of operations required to reach this number in the console.
+// Example of program execution for number = 100500:
+//   Initial number is: 100500;
+//   Attempts: 11;
+//   Final number is: 49.072265625;
 
+function getUserNumber() {
+  const userNamber = +prompt('Enter a number please');
+  if (validityChecNumber(userNamber)) return userNamber;
+}
 
+function validityChecNumber(number) {
+  if (number) {  // check for 0, empty string or spaces
+    return +number.toFixed();
+  }
+  console.error('Invalid data: a numeric value greater than 0 is expected.');
+}
 
+function myfunc() { // sorry, I have no idea what to call this function :)
 
+  const userNamber = getUserNumber();
+
+  if (userNamber) {
+
+    const defaultNum = 50;
+    let numberAfterDivision = 0;
+    let num = userNamber;
+    let i = 0;
+
+    for (i; num > defaultNum; i++) {
+      numberAfterDivision = num / 2;
+      num = numberAfterDivision;
+    }
+    
+    console.log(`Initial number is: ${userNamber};\nAttempts: ${i};\nFinal number is: ${numberAfterDivision};`)
+
+  }
+}
+
+myfunc();
