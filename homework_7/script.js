@@ -58,7 +58,6 @@ function getRandomInteger(min, max) {
 // The array should not contain any data other than the numbers 0 and 1.
 // Do not use number.toString() in this task.
 
-
 const arr = [1, 1, 1, 0, 0, 1];
 let result = 0;
 
@@ -79,6 +78,10 @@ function getDecimalNumber(arr) {
   return result;
 }
 
-getDecimalNumber(arr)
-
 console.log(getDecimalNumber(arr));
+
+// Task 4
+
+
+
+
