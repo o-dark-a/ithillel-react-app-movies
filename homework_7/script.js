@@ -122,3 +122,39 @@ function myfunc() { // sorry, I have no idea what to call this function :)
 }
 
 myfunc();
+
+// Task 5
+// Write a getExponent(number, exponent) function that takes two arguments, a number and an exponent,
+// and raises that number to the given power (like Math.pow(), but without Math.pow() and the ** operator).
+// Solve the task in two ways: through a loop and through recursion.
+
+// by loop
+function getExponent(number, exponent) {
+
+  let result = 1;
+  let sign = (exponent < 0) ? -1 : 1;
+
+  for (let i = 0; i < exponent * sign; i++) {
+    result *= number;
+  }
+
+  return (exponent < 0) ? 1 / result : result;
+
+}
+
+// by recursion
+// a ^ x = a * (a ^ (x-1));
+function getExponent(number, exponent) {
+
+  if (exponent === 0) return 1;
+
+  let sign = (exponent < 0) ? -1 : 1;
+  return exponent > 0 ? number * getExponent(number, (exponent - 1) * sign) : 1 / (number * getExponent(number, (exponent - 1) * sign));
+
+}
+
+console.log(getExponent(2,3)) // 8
+console.log(getExponent(3,6)) // 729
+console.log(getExponent(0,0)) // 1
+console.log(getExponent(-7, 3)) // -343
+console.log(getExponent(6, -2)) // 1/36 = 0,027777
