@@ -82,10 +82,10 @@ function getDecimalNumber(arr) {
 }
 
 console.log(getDecimalNumber([0, 0, 'd', 1])); // error
-console.log(getDecimalNumber([0, 1, 0, 0, 1, 1]));// 15
+console.log(getDecimalNumber([0, 1, 0, 0, 1, 1])); // 19
 console.log(getDecimalNumber([0, 0, 0, 1])); // 1
 console.log(getDecimalNumber([0, 0, 1, 0])); // 2
-console.log(getDecimalNumber([1, 1, 1, 1]));// 15
+console.log(getDecimalNumber([1, 1, 1, 1])); // 15
 console.log(getDecimalNumber([1, 1, 1, 0, 0, 1])); // 57
 
 // Task 4
