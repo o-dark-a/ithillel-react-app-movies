@@ -73,7 +73,7 @@ function getDecimalNumber(arr) {
       return;
     }
 
-    result += (elem * Math.pow(2, degreeOfTwo));
+    result += elem * Math.pow(2, degreeOfTwo);
     degreeOfTwo--;
 
   }
@@ -82,6 +82,7 @@ function getDecimalNumber(arr) {
 }
 
 console.log(getDecimalNumber([0, 0, 'd', 1])); // error
+console.log(getDecimalNumber([0, 1, 0, 0, 1, 1]));// 15
 console.log(getDecimalNumber([0, 0, 0, 1])); // 1
 console.log(getDecimalNumber([0, 0, 1, 0])); // 2
 console.log(getDecimalNumber([1, 1, 1, 1]));// 15
