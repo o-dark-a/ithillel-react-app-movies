@@ -23,8 +23,6 @@ function parseDate() {
 
 parseDate();
 
-/*
-
 // Task 2
 
 // Write a function getRandomInteger (min, max), which returns
@@ -60,27 +58,34 @@ function getRandomInteger(min, max) {
 // The array should not contain any data other than the numbers 0 and 1.
 // Do not use number.toString() in this task.
 
-const arr = [1, 1, 1, 0, 0, 1];
+// (010011)₂ = (0 × 2⁵) + (1 × 2⁴) + (0 × 2³) + (0 × 2²) + (1 × 2¹) + (1 × 2⁰) = (19)₁₀
 let result = 0;
 
 function getDecimalNumber(arr) {
 
-  let strOfArr = '';
+  let result = 0;
+  let degreeOfTwo = arr.length - 1;
 
-  for (let item of arr) {
-    if (item !== 0 && item !== 1) {
+  for (let elem of arr) {
+
+    if (elem !== 0 && elem !== 1) {
       console.error('Incorrect data sent: function getDecimalNumber(arr) expects an array consisting of only 0 and 1.');
       return;
     }
-    strOfArr += item;
+
+    result += (elem * Math.pow(2, degreeOfTwo));
+    degreeOfTwo--;
+
   }
 
-  result = parseInt(strOfArr, 2);
-
-  return result;
+  return +result.toFixed();
 }
 
-console.log(getDecimalNumber(arr));
+console.log(getDecimalNumber([0, 0, 'd', 1])); // error
+console.log(getDecimalNumber([0, 0, 0, 1])); // 1
+console.log(getDecimalNumber([0, 0, 1, 0])); // 2
+console.log(getDecimalNumber([1, 1, 1, 1]));// 15
+console.log(getDecimalNumber([1, 1, 1, 0, 0, 1])); // 57
 
 // Task 4
 // Write a program that asks the user for a number and divides it by 2 times until it is <= 50.
@@ -155,10 +160,8 @@ function getExponent(number, exponent) {
 
 }
 
-console.log(getExponent(2,3)) // 8
-console.log(getExponent(3,6)) // 729
-console.log(getExponent(0,0)) // 1
-console.log(getExponent(-7, 3)) // -343
-console.log(getExponent(6, -2)) // 1/36 = 0,027777
-
-*/
+console.log(getExponent(2,3)); // 8
+console.log(getExponent(3,6)); // 729
+console.log(getExponent(0,0)); // 1
+console.log(getExponent(-7, 3)); // -343
+console.log(getExponent(6, -2)); // 1/36 = 0,027777
