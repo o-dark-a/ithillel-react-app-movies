@@ -7,12 +7,12 @@
 function parseDate() {
 
   const weekDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const currentDate = new Date();
+  const currentDate = new Date(2010, 0, 1, 12, 4, 8);
   const [weekDayIndx, hour, minutes, seconds] = [
     currentDate.getDay(),
     currentDate.getHours(),
-    currentDate.getMinutes(),
-    currentDate.getSeconds(),
+    currentDate.getMinutes() < 10 ? '0' + currentDate.getMinutes() : currentDate.getMinutes(),
+    currentDate.getSeconds() < 10 ? '0' + currentDate.getSeconds() : currentDate.getSeconds(),
   ];
   const meridiemSign = (hour >= 12 && hour <= 23) ? 'PM' : 'AM';
   const weekDayName = weekDays[weekDayIndx];
@@ -22,6 +22,8 @@ function parseDate() {
 }
 
 parseDate();
+
+/*
 
 // Task 2
 
@@ -158,3 +160,5 @@ console.log(getExponent(3,6)) // 729
 console.log(getExponent(0,0)) // 1
 console.log(getExponent(-7, 3)) // -343
 console.log(getExponent(6, -2)) // 1/36 = 0,027777
+
+*/
