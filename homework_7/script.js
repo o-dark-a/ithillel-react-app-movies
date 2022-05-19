@@ -4,11 +4,10 @@
 // Today is: Thursday.
 // Current time is: 10 PM : 03 : 07
 
-function parseDate() {
+function parseDate(currentDate) {
 
   const weekDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const currentDate = new Date(2010, 0, 1, 12, 4, 8);
-  const [weekDayIndx, hour, minutes, seconds] = [
+  let [weekDayIndx, hour, minutes, seconds] = [
     currentDate.getDay(),
     currentDate.getHours(),
     currentDate.getMinutes() < 10 ? '0' + currentDate.getMinutes() : currentDate.getMinutes(),
@@ -16,12 +15,22 @@ function parseDate() {
   ];
   const meridiemSign = (hour >= 12 && hour <= 23) ? 'PM' : 'AM';
   const weekDayName = weekDays[weekDayIndx];
-  
+
+  hour = hour > 12 ? hour - 12 : hour;
+  hour = hour === 0 || hour === 24 ? 12 : hour;
+  hour = hour < 10 ? '0' + hour : hour;
+
   console.log(`Today is: ${weekDayName}.\nCurrent time is: ${hour} ${meridiemSign} : ${minutes} : ${seconds}`);
   
 }
 
-parseDate();
+console.log(parseDate(new Date(2010, 0, 1, 0, 0))); // Current time is: 12 AM : 00 : 00
+console.log(parseDate(new Date(2010, 0, 1, 24, 0))); // Current time is: 12 AM : 00 : 00
+console.log(parseDate(new Date(2010, 0, 1, 12, 0))); // Current time is: 12 PM : 00 : 00
+console.log(parseDate(new Date(2022, 0, 6, 22, 3, 7))); // Current time is: 10 PM : 03 : 07
+console.log(parseDate(new Date(2018, 4, 5, 4, 15, 9))); // Current time is: 04 AM : 15 : 09
+console.log(parseDate(new Date(2025, 11, 0, 12, 0, 0))); // Current time is: 12 PM : 00 : 00
+console.log(parseDate(new Date(2025, 11, 0, 18, 45, 21))); // Current time is: 06 PM : 45 : 21
 
 // Task 2
 
