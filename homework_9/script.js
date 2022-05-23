@@ -82,3 +82,22 @@ console.log(result); // ['rules', 'my', '-', 'life', 'My'];
   let result = joinArray(array, '%');
   console.log(result); // 1%2%3%4%5
 }
+
+// Task 6
+
+// Write a joinStr function that returns a string that is formed from the concatenation of all strings
+// that are passed as arguments to the function through a comma.
+
+{
+
+  function joinStr(...arr) {
+    return arr.filter(elem => typeof elem === 'string').toString();
+  }
+
+  let string1 = joinStr(0);
+  console.log(string1); // ''
+  let string2 = joinStr(1,'hello',3, 'world');
+  console.log(string2); // 'hello,world'
+  let string3 = joinStr('g','o', 0, '0', null, 'd', {});
+  console.log(string3); // 'g,o,0,d'
+}
