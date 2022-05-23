@@ -9,3 +9,12 @@ const vegetable = {
 
 const { name, color } = vegetable;
 console.log(`${name}s are usually ${color}`);
+
+// Task 2
+
+// Add the following properties to the vegetable object so that "onions are usually round" is displayed in the console.
+
+vegetable.shape = 'round';
+
+const { shape } = vegetable;
+console.log(`${name}s are usually ${shape}`);
