@@ -37,3 +37,19 @@ function reverseArray(arr) {
 let array = ['My', 'life', '-', 'my', 'rules'];
 let result = reverseArray(array);
 console.log(result); // ['rules', 'my', '-', 'life', 'My'];
+
+
+// Task 3
+
+// Write a filterArray function that clears the array of unwanted values (false, undefined, '', 0, null, NaN).
+
+{
+  function filterArray() {
+    let passedArgs = arguments[0];
+    return passedArgs.filter(elem => elem);
+  }
+  
+  let array = [0, 1, 2, null, undefined, 'qwerty', false, NaN];
+  let result = filterArray(array);
+  console.log(result); // [1,2, 'qwerty'];
+}
