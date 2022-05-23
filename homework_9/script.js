@@ -68,3 +68,17 @@ console.log(result); // ['rules', 'my', '-', 'life', 'My'];
   let result = spliceFour(array);
   console.log(result); // [1, 2, 3, 'JavaScript', 5];
 }
+
+// Task 5
+
+// Write a joinArray function that converts an array into a string by joining elements with a specified character.
+
+{
+  function joinArray(array, symbol) {
+    return array.join(symbol);
+  }
+
+  let array = [1, 2, 3, 4, 5];
+  let result = joinArray(array, '%');
+  console.log(result); // 1%2%3%4%5
+}
