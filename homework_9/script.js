@@ -5,12 +5,7 @@
 // and 'qwerty' is the value of each element of the array
 
 function fillArray(arrayLength, arrayElemValue) {
-
-  let newArray = new Array(arrayLength).fill(null);
-  newArray.forEach((item, i, arr) => arr[i] = arrayElemValue);
-
-  return newArray;
-
+  return new Array(arrayLength).fill(arrayElemValue);
 }
 
 let array1 = fillArray(3, 'qwerty');
@@ -100,4 +95,31 @@ console.log(result); // ['rules', 'my', '-', 'life', 'My'];
   console.log(string2); // 'hello,world'
   let string3 = joinStr('g','o', 0, '0', null, 'd', {});
   console.log(string3); // 'g,o,0,d'
+}
+
+// Task 7
+
+// Write an advancedFillArray function that creates an array and fills it with random values from a given range.
+// (Turn the logic of creating a random number into the function setRandomValue(min, max)).
+
+// let array  = advancedFillArray(10, 1, 15),
+// where 10 is the length of the array, 1 is the minimum value, 15 is the maximum value.
+// tips: here you will find the fillArray function, which you already wrote in the first task,
+// and the map array method to change the values to the desired ones.
+
+{
+
+  function setRandomValue(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  function advancedFillArray(arrLength, min, max) {
+    return fillArray(arrLength, 0).map(() => setRandomValue(min, max));
+  }
+  
+  console.log(advancedFillArray(10, 1, 15));
+  console.log(advancedFillArray(5, 2, 5));
+  
 }
