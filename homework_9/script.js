@@ -53,3 +53,18 @@ console.log(result); // ['rules', 'my', '-', 'life', 'My'];
   let result = filterArray(array);
   console.log(result); // [1,2, 'qwerty'];
 }
+
+// Task 4
+
+// Write a spliceFour function that removes the 4th element of the array and replaces it with the string 'JavaScript'.
+
+{
+  function spliceFour(arr) {
+    arr.splice(3, 1, 'JavaScript');
+    return arr;
+  }
+  
+  let array = [1, 2, 3, 4, 5];
+  let result = spliceFour(array);
+  console.log(result); // [1, 2, 3, 'JavaScript', 5];
+}
