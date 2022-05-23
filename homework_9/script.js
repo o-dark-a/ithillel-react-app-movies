@@ -17,3 +17,23 @@ let array1 = fillArray(3, 'qwerty');
 let array2 = fillArray(6, 9);
 console.log(array1); // ['qwerty', 'qwerty', 'qwerty']
 console.log(array2); // [9, 9, 9, 9, 9, 9]
+
+// Task 2
+
+// Write a reverseArray function that flips the value of the array back and forth.
+
+function reverseArray(arr) {
+
+  let newArr = [];
+
+  for (let elem of arr) {
+    newArr.unshift(elem);
+  }
+
+  return newArr;
+
+}
+
+let array = ['My', 'life', '-', 'my', 'rules'];
+let result = reverseArray(array);
+console.log(result); // ['rules', 'my', '-', 'life', 'My'];
