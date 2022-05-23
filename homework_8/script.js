@@ -38,3 +38,20 @@ const vegetables = [
 const [cucumber, tomato] = vegetables;
 console.log(`${cucumber.name}s are usually ${cucumber.color}`);
 console.log(`${tomato.name}s are usually ${tomato.color}`);
+
+// Task 4
+
+// Based on the examples shown above, create an array of student objects, output the 2nd element of the array
+// and the length of the array of remaining elements.
+
+let students = [
+  { name: 'Kate', age: 25 },
+  { name: 'Artur', age: 30 },
+  { name: 'Nick', age: 15 },
+  { name: 'Alex', age: 28 },
+  { name: 'Zhenia', age: 45 },
+];
+
+const [, secondArrElem, ...otherStudents] = students;
+console.log(secondArrElem);
+console.log(otherStudents.length);
