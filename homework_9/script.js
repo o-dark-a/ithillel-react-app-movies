@@ -18,15 +18,7 @@ console.log(array2); // [9, 9, 9, 9, 9, 9]
 // Write a reverseArray function that flips the value of the array back and forth.
 
 function reverseArray(arr) {
-
-  let newArr = [];
-
-  for (let elem of arr) {
-    newArr.unshift(elem);
-  }
-
-  return newArr;
-
+  return arr.reverse();
 }
 
 let array = ['My', 'life', '-', 'my', 'rules'];
