@@ -14,7 +14,7 @@ function createBuffer() {
   let text = '';
   
   return function buffer(str) {
-    if (!str) return text;
+    if (!arguments.length) return text;
     return (typeof str === 'string') ? text += str : console.error('Expected string type parameter');
   };
 
