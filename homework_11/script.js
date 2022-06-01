@@ -94,3 +94,14 @@ function getStringElements(array) {
 
 let arr = [1 , true , 42 , "red" , 64 , "green" , "web" , new Date() , -898 , false]
 console.log(getStringElements(arr)); // ["red", "green", "web"]
+
+// Task 5
+
+// Write a flatArray function that turns an array within an array into a single array.
+
+function flatArray(array) {
+  return array.reduce((previousValue, currentValue) => [...previousValue, ...currentValue]);
+}
+
+let array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+console.log(flatArray(array)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
