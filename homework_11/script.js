@@ -83,3 +83,14 @@ console.log(removeNegativeElements([-9, 2, 3, 0, -28, 'value'])); // [2, 3, 0, '
 console.log(removeNegativeElements([-9, -21, -12])); // []
 console.log(removeNegativeElements(['-102', 102])); // ['-102', 102]
 console.log(removeNegativeElements([NaN, 45, -5, null])); // [NaN, 45, null]
+
+// Task 4
+
+// Create a getStringElements function that returns an input array with only string values.
+
+function getStringElements(array) {
+  return array.filter(elem => typeof elem === 'string');
+}
+
+let arr = [1 , true , 42 , "red" , 64 , "green" , "web" , new Date() , -898 , false]
+console.log(getStringElements(arr)); // ["red", "green", "web"]
