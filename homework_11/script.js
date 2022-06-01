@@ -105,3 +105,18 @@ function flatArray(array) {
 
 let array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 console.log(flatArray(array)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// Task 6
+
+// Create a function myMap that takes an array as an argument and a function that specifies
+// how that array should be modified.
+
+function myMap(arr, modifyingFn) {
+  return arr.map(elem => modifyingFn(elem));
+}
+
+function increaseElement (element) {
+  return element * 2;
+}
+
+console.log(myMap([1, 2, 3, 4], increaseElement)); // [2, 4, 6, 8];
