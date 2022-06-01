@@ -41,3 +41,32 @@ console.log(fourthEmploye);
 const employeeSurnames = employees.map(employe => employe.surname);
 
 console.log(employeeSurnames);
+
+// Task 2
+
+// Create an array of frameworks with values: 'AngularJS', 'jQuery'
+
+let frameworks = ['AngularJS', 'jQuery'];
+
+// a)  add 'Backbone.js' to the beginning of the array
+
+frameworks.unshift('Backbone.js');
+console.log(frameworks);
+
+// b)  add 'ReactJS' and 'Vue.js' to the end of the array
+
+frameworks.push('ReactJS', 'Vue.js');
+console.log(frameworks);
+
+// c)  add a 'CommonJS' value to the array as the second element of the array
+
+frameworks.splice(1, 0, 'CommonJS');
+console.log(frameworks);
+
+// d)  find and remove the value of 'jQuery' from the array (you need to find the index of the array element)
+//     and display it in the console with the words "This is superfluous".
+
+const indexUnnecessaryElem = frameworks.indexOf('jQuery');
+frameworks.splice(indexUnnecessaryElem, 1);
+
+console.log(frameworks);
