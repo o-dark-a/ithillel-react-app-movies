@@ -70,3 +70,16 @@ const indexUnnecessaryElem = frameworks.indexOf('jQuery');
 frameworks.splice(indexUnnecessaryElem, 1);
 
 console.log(frameworks);
+
+// Task 3
+
+// Create a removeNegativeElements function, which removes all negative numbers from the input array.
+
+function removeNegativeElements(array) {
+  return array.filter(elem => typeof elem === 'string' || elem >= 0 || Number.isNaN(elem));
+}
+
+console.log(removeNegativeElements([-9, 2, 3, 0, -28, 'value'])); // [2, 3, 0, 'value'];
+console.log(removeNegativeElements([-9, -21, -12])); // []
+console.log(removeNegativeElements(['-102', 102])); // ['-102', 102]
+console.log(removeNegativeElements([NaN, 45, -5, null])); // [NaN, 45, null]
