@@ -86,3 +86,28 @@ console.log(calculator.sum()); // 7
 console.log(calculator.diff()); // 3
 console.log(calculator.mult()); // 10
 console.log(calculator.div()); // 2,5
+
+// Task 3
+
+// Given a country object and a format() function:
+//   add the code so that the lines shown in the comments appear in the console.
+
+var country = {
+  name: 'Ukraine',
+  language: 'ukrainian',
+  capital: {
+      name: 'Kyiv',
+      population: 2907817,
+      area: 847.66
+  }
+};
+
+function format(start, end) {
+  console.log(start + this.name + end);
+}
+
+format.call(country, '', ''); // Ukraine
+format.apply(country, ['[', ']']); // [Ukraine]
+format.call(country.capital, '', ''); // Kyiv
+format.apply(country.capital, ['', '']); // Kyiv
+format.apply(null, [undefined, '']); // undefined
