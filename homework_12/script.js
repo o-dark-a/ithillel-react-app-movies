@@ -6,8 +6,6 @@
 //   Create a method in the triangle object that checks whether this triangle is equilateral;
 // Display information about the created triangle (including the results of all methods) in the console.
 
-/* Initial object */
-
 let triangle = {
   aSide: 0,
   bSide: 0,
@@ -111,3 +109,20 @@ format.apply(country, ['[', ']']); // [Ukraine]
 format.call(country.capital, '', ''); // Kyiv
 format.apply(country.capital, ['', '']); // Kyiv
 format.apply(null, [undefined, '']); // undefined
+
+// Task 4
+
+// What will this code return to the screen and why?
+
+var text = 'outside';
+function logIt(){
+  console.log(text);
+  var text = 'inside';
+};
+
+logIt();
+
+// Выведет undefined, потому что функция logIt() в строке 121 будет брать переменную text
+// из своего лексического окружения, которая на момент выполнения console.log(text) уже существует,
+// она всплыла до ближайшей ф-ии (logIt()), но пока что ей еще не присвоено какое-либо значение,
+// поэтому она - undefined.
