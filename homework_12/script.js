@@ -35,7 +35,7 @@ let triangle = {
     return this.aSide + this.bSide + this.cSide;
   },
   isEqualSides: function() {
-    return (this.aSide === this.bSide && this.aSide === this.cSide && this.bSide === this.cSide);
+    return (this.aSide === this.bSide && this.aSide === this.cSide);
   }
 }
 
