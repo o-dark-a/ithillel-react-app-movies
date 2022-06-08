@@ -22,3 +22,28 @@ let teaPlease = {
 
 const offerTea = coffeeMachine.start.bind(teaPlease);
 offerTea(); // 'Wanna some tea instead of coffee?'
+
+// Task 2
+
+// Write a concatStr() function that concatenates two strings separated by some character: the delimiter
+// and the strings are passed in the function parameters.
+
+// Using bind arguments, create a new hello() function that prints out a greeting to whoever is passed
+// as its parameter:
+
+function concatStr(firstStr, symbol, secondStr) {
+  return firstStr + symbol + secondStr;
+}
+
+function hello(name) {
+  return concatStr.bind(this, 'Hello', ' ', name);
+}
+
+let checkConcat = concatStr('Hello', ' ', 'Joe');
+console.log(checkConcat);  // 'Hello Matt'
+
+let finalResult1 = hello('Matt');
+let finalResult2 = hello('John');
+
+console.log(finalResult1()); // 'Hello Matt'
+console.log(finalResult2()); // 'Hello John'
