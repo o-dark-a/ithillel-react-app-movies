@@ -54,16 +54,16 @@ console.log(finalResult2()); // 'Hello John'
 // at a given interval (all data must be passed as function parameters).
 
 function showNumbers(from, to, interval) {
-  let myInterval 
-  do {
-    myInterval = setInterval(console.log(from), interval);
+  let myInterval = setInterval(function() {
+    console.log(from);
     from++;
-  }
-  while (from <= to);
-  clearInterval(myInterval);
+    if (from > to) {
+      clearInterval(myInterval);
+    }
+  }, interval);
 }
 
-showNumbers(7, 13, 1500); // 5 6 7 8 9 10
+showNumbers(5, 10, 500); // 5 6 7 8 9 10
 
 // Task 4
 
