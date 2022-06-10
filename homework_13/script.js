@@ -47,3 +47,22 @@ let finalResult2 = hello('John');
 
 console.log(finalResult1()); // 'Hello Matt'
 console.log(finalResult2()); // 'Hello John'
+
+// Task 3
+
+// Write a showNumbers() function that sequentially prints numbers in a given range to the console
+// at a given interval (all data must be passed as function parameters).
+
+function showNumbers(from, to, interval) {
+  let myInterval 
+  do {
+    myInterval = setInterval(console.log(from), interval);
+    from++;
+  }
+  while (from <= to);
+  clearInterval(myInterval);
+}
+
+showNumbers(7, 13, 1500); // 5 6 7 8 9 10
+
+
