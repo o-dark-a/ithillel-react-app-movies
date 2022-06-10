@@ -65,4 +65,19 @@ function showNumbers(from, to, interval) {
 
 showNumbers(7, 13, 1500); // 5 6 7 8 9 10
 
+// Task 4
 
+// What will be the output of this code? Explain why.
+
+function addBase(base) {
+  return function (num) {
+    return base + num;
+  };
+}
+let addOne = addBase(1); 
+alert(addOne(5) + addOne(3));
+
+// alert выведет число 10 потому что:
+// addBase(1) вернет функцию, которая будет иметь доступ к base=1 через замыкание.
+// addOne(5) вернет 1 + 5 = 6
+// addOne(3) вернет 1 + 3 = 4
