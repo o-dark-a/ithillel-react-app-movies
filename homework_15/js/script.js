@@ -30,23 +30,17 @@ window.addEventListener('load', function() {
   }
 
   function getAllSongs() {
-    let AllSongs = songs;
-
-    if (localStorage.getItem('songs')) {
-      AllSongs = JSON.parse(localStorage.getItem('songs'));
-    }
-
-    return AllSongs;
+    return localStorage.getItem('songs') ? JSON.parse(localStorage.getItem('songs')) : songs;
   }
 
   function addSong(songId, songName, isLiked = false) {
-    let AllSongs = getAllSongs();
-    AllSongs.push({
+    let allSongs = getAllSongs();
+    allSongs.push({
       id: songId,
       name: songName,
       isLiked,
     });
-    localStorage.setItem('songs', JSON.stringify(AllSongs));
+    localStorage.setItem('songs', JSON.stringify(allSongs));
   }
 
   function displaySong(songId, songName, isLiked = false) {
