@@ -80,8 +80,6 @@ for (let employee of employees) {
 
 company.setTotalProfit();
 
-console.log(company);
-
 for (let employeeInfo of [...company.bosses, ...company.workers, ...company.trainees]) {
   console.log(`${employeeInfo.name} ${employeeInfo.surname} - position: ${employeeInfo.position}, rate: ${employeeInfo.rate}, days: ${employeeInfo.days}`);
   console.log(employeeInfo.getInfo());
