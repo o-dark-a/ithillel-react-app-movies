@@ -32,3 +32,22 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+// Task 2
+
+function goToShop() {
+  const productsCount = prompt('How many products have you bought?');
+  return Promise.resolve(productsCount)
+                .then((res) => res < 4 ? Promise.reject('Too low products') : makeDinner())
+                .catch(error => console.error(error));
+}
+
+function makeDinner() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Bon Appetit');
+    }, 3000);
+  }).then((res) => console.log(res));
+}
+
+goToShop();
