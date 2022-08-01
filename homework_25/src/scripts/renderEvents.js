@@ -4,6 +4,7 @@ import { parseHoursToMinutes } from './parser';
 // const dayInMinutes = 60 * 60 * 7;
 
 export function renderEvents(events) {
+
     const timeSlots = document.querySelectorAll('.event-wrap');
 
     for (let eventItem of events) {
