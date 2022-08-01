@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <form class="form" id="tasksForm">
+          <h3 class="form__title">Create Event</h3>
+          <input type="checkbox" id="form-opener" />
+          <label class="form__opener" for="form-opener"></label>
+          <div class="form__body">
+            <label class="form-label">
+              Title
+              <input
+                class="form-input"
+                type="text"
+                name="title"
+                placeholder="New Event..."
+                required
+              />
+            </label>
+            <label class="form-label">
+              Time <small></small>
+              <input
+                class="form-input"
+                type="time"
+                id="startInput"
+                name="start"
+                required
+              />
+            </label>
+            <label class="form-label">
+              Duration
+              <input
+                class="form-input"
+                type="number"
+                name="duration"
+                placeholder="Measured in minutes"
+                required
+              />
+            </label>
+            <label class="form-label">
+              Color
+              <input type="color" value="#6E9ECF" name="color" />
+            </label>
+
+            <button class="button form__button" id="addBtn">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal__overlay">
+        <div class="modal-content">
+          <button class="btn close">x</button>
+          <div class="modal-wrap"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

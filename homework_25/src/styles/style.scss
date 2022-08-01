@@ -1,0 +1,266 @@
+@import './base.scss';
+
+.event-item {
+  position: relative;
+  font-size: 14px;
+  display: flex;
+  font-family: 'open';
+  height: 60px;
+  border-bottom: 1px solid rgba(177, 173, 173, 0.244);
+}
+
+.event-time-small {
+  font-size: 12px;
+}
+
+.event-wrap {
+  position: relative;
+  width: 400px;
+  display: flex;
+}
+
+.event {
+  position: relative;
+  width: 100%;
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: 4px 4px 30px 0px rgba(35, 58, 75, 0.4);
+  }
+}
+
+.event-content {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+
+  &:hover {
+    z-index: 99;
+  }
+
+  span {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    padding: 0px 5px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  background: rgba(31, 30, 30, 0.349);
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: #fff;
+  z-index: 99;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.modal-wrap {
+  padding: 15px;
+}
+
+form input {
+  color: rgba(56, 64, 92, 0.933);
+  margin: 5px 0px;
+}
+
+.form form {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  top: 20px;
+}
+
+.btn {
+  border: none;
+  font-size: 16px;
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s;
+  background: transparent;
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  &.delete__property {
+    position: absolute;
+    right: 10px;
+    z-index: 99;
+    background: transparent;
+  }
+}
+
+.modal-wrap p {
+  padding: 10px 0px;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
+
+.form {
+  border: 1px solid #eee;
+  padding: 16px;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.form__title {
+  margin: 0;
+}
+
+.form__opener {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 11px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 80%;
+    height: 2px;
+    background-color: #000;
+    transition: 300ms;
+  }
+
+  &:before {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+.form__body {
+  height: 0;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-top: 30px;
+  display: block;
+}
+
+.form-input {
+  border: 1px solid #eee;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.form-input,
+input[type='color'] {
+  display: block;
+  margin-top: 12px;
+  transition: 300ms;
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+input[type='color']:hover {
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+}
+
+.form__button {
+  margin-top: 30px;
+}
+
+#form-opener {
+  display: none;
+
+  &:checked {
+    ~ .form__opener {
+      &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    ~ .form__body {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  border: 0;
+  transition: 300ms;
+
+  &:hover {
+    background-color: #039903;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  }
+}
