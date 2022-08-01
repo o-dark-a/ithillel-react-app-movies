@@ -3,7 +3,7 @@ import { renderEvents } from './renderEvents';
 const container = document.querySelector('.container');
 container.addEventListener('click', removeEvent);
 
-async function removeEvent(event) {
+function removeEvent(event) {
   let newEventsArr = JSON.parse(localStorage.getItem('events'));
 
   const cssClassesArr = Array.from(event.target.classList);
