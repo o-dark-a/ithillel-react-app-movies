@@ -47,13 +47,10 @@ app.post('/notes', async (req, res) => {
 })
 
 app.delete('/notes/:id', async (req, res) => {
-  console.log(req.params.id)
-
   let allNotes = await readFileAsPromise('./data/notes.json', 'utf-8')
 
   if (!!allNotes.length) {
     let newNotes = JSON.parse(allNotes).filter(note => note.id !== req.params.id)
-    console.log(newNotes)
     await writeFileAsPromise('./data/notes.json', JSON.stringify(newNotes))
   }
 
