@@ -1,26 +1,26 @@
 const songs = [
   {
     id: 1,
-    songName: 'My love',
-    singer: 'Yooou',
+    songName: 'Simply Falling',
+    singer: 'lyeoka',
     isLiked: false
   },
   {
     id: 2,
-    songName: 'My love',
-    singer: 'Yooou',
+    songName: 'Lost the Game',
+    singer: 'Two Feet',
     isLiked: false
   },
   {
     id: 3,
-    songName: 'My love',
-    singer: 'Yooou',
+    songName: 'Winter',
+    singer: 'Two Feet',
     isLiked: false
   },
   {
     id: 4,
-    songName: 'My love',
-    singer: 'Yooou',
+    songName: 'Jerk',
+    singer: 'Oliver Tree',
     isLiked: false
   },
 ]

@@ -4,10 +4,13 @@ import songs from './data/data';
 import AddNewSong from './components/AddNewSong/AddNewSong';
 import SongsCount from './components/SongsCount/SongsCount';
 import SongsList from './components/SongsList/SongsList';
+import SortSongs from './components/SortSongs/SortSongs';
+import { useMemo } from 'react';
 import { useState } from 'react';
 
 function App() {
   const [allSongs, setNewSong] = useState(songs);
+  const [sortOrder, setSortOrder] = useState('first liked');
 
   function addNewSong(newSong) {
     setNewSong([newSong, ...allSongs]);
@@ -23,11 +26,26 @@ function App() {
     setNewSong(updateSongsList);
   }
 
+  const sortedSongsList = useMemo(() => {
+    if(sortOrder === 'first liked') {
+      return [...allSongs].sort(song => !song.isLiked ? 1 : -1);
+    }
+    return [...allSongs].sort(song => song.isLiked ? 1 : -1);
+  }, [allSongs]);
+
+  const setSortSongsOrder = function(order) {
+    if (allSongs.some((song) => song.isLiked) && sortOrder !== order) {
+      setSortOrder(order);
+      setNewSong(sortedSongsList);
+    }
+  }
+
   return (
     <div className="playlist-wrapper">
       <h2>Playlist</h2>
       <AddNewSong addNewSong={addNewSong}/>
-      <SongsList songs={allSongs} removeSong={removeSong} changeLikestatus={changeLikestatus}/>
+      <SortSongs setSortOrder={setSortSongsOrder} />
+      <SongsList songs={sortedSongsList} removeSong={removeSong} changeLikestatus={changeLikestatus}/>
       <SongsCount songsCount={allSongs.length} />
     </div>
   );
