@@ -13,11 +13,16 @@ function App() {
     setNewSong([newSong, ...allSongs]);
   }
 
+  function removeSong(songId) {
+    const updateSongsList = allSongs.filter(song => song.id !== songId);
+    setNewSong(updateSongsList);
+  }
+
   return (
     <div className="playlist-wrapper">
       <h2>Playlist</h2>
       <AddNewSong addNewSong={addNewSong}/>
-      <SongsList songs={allSongs}/>
+      <SongsList songs={allSongs} removeSong={removeSong}/>
       <SongsCount songsCount={allSongs.length} />
     </div>
   );

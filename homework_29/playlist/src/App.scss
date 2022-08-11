@@ -7,11 +7,8 @@
 }
 
 body {
-  background: linear-gradient(
-    125deg,
-    rgb(225, 236, 246) 0%,
-    rgb(125, 219, 232) 100%
-  );
+  background: linear-gradient(#e7f69b, #aef1b8);
+  min-height: 100vh;
 }
 .todo-app {
   display: flex;
@@ -126,4 +123,8 @@ h1 {
 
 .edit-icon {
   color: #fff;
+}
+
+.playlist-wrapper {
+  padding: 25px;
 }
