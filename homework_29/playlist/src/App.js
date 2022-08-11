@@ -18,11 +18,16 @@ function App() {
     setNewSong(updateSongsList);
   }
 
+  const changeLikestatus = function(likedSong) {
+    const updateSongsList = allSongs.map(song => likedSong.id === song.id ? ({...song, isLiked: !song.isLiked}) : song);
+    setNewSong(updateSongsList);
+  }
+
   return (
     <div className="playlist-wrapper">
       <h2>Playlist</h2>
       <AddNewSong addNewSong={addNewSong}/>
-      <SongsList songs={allSongs} removeSong={removeSong}/>
+      <SongsList songs={allSongs} removeSong={removeSong} changeLikestatus={changeLikestatus}/>
       <SongsCount songsCount={allSongs.length} />
     </div>
   );

@@ -6,15 +6,3 @@
 .song-singer {
   margin-left: 5px;
 }
-
-.song-mod {
-  margin-left: auto;
-  button {
-    background-color: transparent;
-    border: none;
-    &:hover {
-      cursor: pointer;
-      scale: 1.3;
-    }
-  }
-}

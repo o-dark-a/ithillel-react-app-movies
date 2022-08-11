@@ -16,8 +16,10 @@ function AddNewSong({ addNewSong }) {
     addNewSong({
       id: uuidv4(),
       songName: newSong,
-      singer: 'No name'
+      singer: 'No name',
+      isLiked: false
     });
+    setNewSong('');
   }
 
   return (
