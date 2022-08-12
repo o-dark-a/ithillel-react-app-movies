@@ -1,0 +1,19 @@
+.song-mod {
+  margin-left: auto;
+  button {
+    background-color: transparent;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      scale: 1.3;
+    }
+  }
+}
+
+.song-like-btn {
+  opacity: .25;
+}
+
+.song-like-btn.liked {
+  opacity: 1;
+}

@@ -1,0 +1,28 @@
+const songs = [
+  {
+    id: 1,
+    songName: 'Simply Falling',
+    singer: 'lyeoka',
+    isLiked: false
+  },
+  {
+    id: 2,
+    songName: 'Lost the Game',
+    singer: 'Two Feet',
+    isLiked: false
+  },
+  {
+    id: 3,
+    songName: 'Winter',
+    singer: 'Two Feet',
+    isLiked: false
+  },
+  {
+    id: 4,
+    songName: 'Jerk',
+    singer: 'Oliver Tree',
+    isLiked: false
+  },
+]
+
+export default songs;
