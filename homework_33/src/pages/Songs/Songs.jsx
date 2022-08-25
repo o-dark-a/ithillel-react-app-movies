@@ -6,7 +6,7 @@ import SongsList from '../../components/SongsList/SongsList';
 import SortSongs from '../../components/SortSongs/SortSongs';
 import { SongContextComponent } from '../../context/context';
 import { getAllSongs } from '../../api/playListAPI';
-import { SET_SONGS } from '../../reducer/SongReducer';
+import { SET_SONGS } from '../../reducer/songReducer';
 import { Link } from "react-router-dom";
 
 function Songs() {

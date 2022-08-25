@@ -3,7 +3,7 @@ import SongInput from '../SongInput/SongInput';
 import AddSongButton from '../AddSongButton/AddSongButton';
 import { v4 as uuidv4 } from 'uuid';
 import { SongContextComponent } from '../../context/context';
-import { ADD_SONG, UPDATE_NEW_SONG_NAME} from '../../reducer/SongReducer';
+import { ADD_SONG, UPDATE_NEW_SONG_NAME} from '../../reducer/songReducer';
 
 function AddNewSong() {
   const [{ newSongName }, dispatch] = useContext(SongContextComponent);

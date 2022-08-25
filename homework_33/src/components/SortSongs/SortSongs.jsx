@@ -1,7 +1,7 @@
 import {React, useContext} from 'react';
 import './SortSongs.scss';
 import {SongContextComponent} from '../../context/context';
-import { SET_SORT_ORDER } from '../../reducer/SongReducer';
+import { SET_SORT_ORDER } from '../../reducer/songReducer';
 
 function SortSongs() {
   const [_, dispatch] = useContext(SongContextComponent);

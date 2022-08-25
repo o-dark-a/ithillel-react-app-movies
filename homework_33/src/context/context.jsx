@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { initialState, SongReducer } from "../reducer/SongReducer";
+import { initialState, SongReducer } from "../reducer/songReducer";
 export const SongContextComponent = createContext({});
 
 function SongContext({ children }) {

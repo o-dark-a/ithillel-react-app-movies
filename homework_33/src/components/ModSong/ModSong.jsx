@@ -3,10 +3,10 @@ import './ModSong.scss';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { FcLike } from 'react-icons/fc';
 import { SongContextComponent } from '../../context/context';
-import { REMOVE_SONG, CHANGE_LIKE_STATUS, SET_FAVORITE_SONGS } from '../../reducer/SongReducer';
+import { REMOVE_SONG, CHANGE_LIKE_STATUS } from '../../reducer/songReducer';
 
 function ModSong({song}) {
-  const [songs, dispatch] = useContext(SongContextComponent);
+  const [_, dispatch] = useContext(SongContextComponent);
 
   function removeSong(songId) {
     dispatch({

@@ -1,7 +1,7 @@
 import { React, useContext, useEffect } from 'react';
 import './FavoritesSongs.scss';
 import SongsList from '../../components/SongsList/SongsList';
-import { SET_FAVORITE_SONGS } from '../../reducer/SongReducer';
+import { SET_FAVORITE_SONGS } from '../../reducer/songReducer';
 import { SongContextComponent } from '../../context/context';
 import { Link } from "react-router-dom";
 

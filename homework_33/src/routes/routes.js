@@ -36,10 +36,6 @@ export const routes = [
   },
   {
     path: "*",
-    element: (
-      <Suspense>
-        <NotFound />
-      </Suspense>
-    ),
+    element: getComponent(NotFound),
   },
 ];
