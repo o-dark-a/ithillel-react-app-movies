@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from "react-redux";
@@ -9,49 +9,35 @@ function FilterForm() {
   const [options, setOptions] = useState({
     query: '',
     language: '',
-    genre: ''
+    with_genres: ''
   });
   const dispatch = useDispatch();
+
+  const handleFilterChange = useCallback((e) => {
+    const { value, attributes: { dataoptiontype: { value: option } } } = e.target;
+    setOptions({ ...options, [option]: value });
+  }, [options]);
+
+  const changeQuery = (e) => {
+    setOptions({ ...options, query: e.target.value });
+  }
 
   useEffect(() => {
     dispatch(fetchGenres());
     dispatch(fetchLanguages());
-  }, [dispatch]);
+  }, []);
 
-  const choseFilterOption = (e) => {
-    const { dataoptiontype: { value: option } } = e.target.attributes;
-
-    switch(option) {
-      case 'query':
-        setOptions({
-          ...options,
-          query: e.target.value,
-        })
-        break;
-      case 'genre':
-        console.log(1);
-        setOptions({
-          ...options,
-          genre: e.target.name,
-        })
-        break;
-      case 'language':
-        setOptions({
-          ...options,
-          language: e.target.name,
-        })
-        break;
+  useEffect(() => {
+    if (!(options.query === '' && options.language === '' && options.with_genres === '')) {
+      dispatch(fetchFiltredMovies(options));
     }
-
-    dispatch(fetchFiltredMovies(options));
-
-  }
+  }, [options]);
 
   return (
     <>
       <Box>
         <Typography level="body1">Search by name</Typography>
-        <input dataoptiontype='query' type="text" value={options.query} onChange={(e) => choseFilterOption(e)} />
+        <input dataoptiontype='original_title' type="text" value={options.query} onChange={changeQuery} />
       </Box>
 
       <Box>
@@ -59,7 +45,7 @@ function FilterForm() {
         <ul>
           {allGenres.map((genre, i) => (
             <li key={i}>
-              <button dataoptiontype='genre' onClick={(e) => choseFilterOption(e)} type="button" name={genre.name}>{genre.name}</button>
+              <button dataoptiontype='with_genres' onClick={handleFilterChange} type="button" value={genre.id}>{genre.name}</button>
             </li>
           ))}
         </ul>
@@ -70,7 +56,7 @@ function FilterForm() {
         <ul>
           {allLanguages.map((language, i) => (
             <li key={i}>
-              <button dataoptiontype='language' onClick={(e) => choseFilterOption(e)} type="button" name={language.iso_639_1}>{language.english_name}</button>
+              <button dataoptiontype='language' onClick={handleFilterChange} type="button" value={language.iso_639_1}>{language.english_name}</button>
             </li>
           ))}
         </ul>

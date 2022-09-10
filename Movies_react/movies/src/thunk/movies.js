@@ -35,7 +35,6 @@ export const fetchLanguages = () => {
 }
 
 export const fetchFiltredMovies = (options) => {
-  console.log(options);
   return async (dispatch) => {
     try {
       const { data } = await getFiltredMovies(options);

@@ -40,7 +40,6 @@ const schema = yup.object({
 
 function SignupPage() {
   const [pass, setPass] = useState('');
-  const [confirmPass, setConfirmPass] = useState('');
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
@@ -49,7 +48,6 @@ function SignupPage() {
 
   const onBlur = () => {
     setPass(watch('password'));
-    setConfirmPass(watch('confirmPassword'));
   }
 
   return (
