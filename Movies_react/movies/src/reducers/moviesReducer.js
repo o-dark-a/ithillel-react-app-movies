@@ -14,7 +14,7 @@ export function moviesReducer(state = initialState, action) {
       return {
         ...state,
         allMovies: action.payload.movies.results,
-        totalPages: action.payload.movies.total_pages > 500 ? 500 : action.payload.movies.total_pages
+        totalPages: action.payload.movies.total_pages
       }
     case SET_SELECTED_MOVIE:
       return {
