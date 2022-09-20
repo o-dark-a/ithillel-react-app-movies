@@ -5,6 +5,10 @@ export const LOAD_GENRES_ERROR = '[MOVIES] Load genres error';
 export const LOAD_LANGUAGES_SUCCESS = '[MOVIES] Load languages success';
 export const LOAD_LANGUAGES_ERROR = '[MOVIES] Load languages error';
 export const SET_SELECTED_MOVIE = '[MOVIES] Get movie info';
+export const SET_PAGINATION_PAGE = '[MOVIES] Set pagination page';
+export const SET_FILTER_OPTION = '[MOVIES] Set filter option';
+export const ADD_FAVORITE_MOVIE = '[MOVIES] Add favorite movie';
+export const REMOVE_FAVORITE_MOVIE = '[MOVIES] Remove favorite movie';
 
 export const loadMoviesSuccess = (movies) => ({
   type: LOAD_MOVIES_SUCCESS,
@@ -39,4 +43,24 @@ export const loadLanguagesError = (error) => ({
 export const setSelectedMovie = (selectedMovie) => ({
   type: SET_SELECTED_MOVIE,
   payload: { selectedMovie }
+})
+
+export const setPaginationPage = (currentPage) => ({
+  type: SET_PAGINATION_PAGE,
+  payload: { currentPage }
+})
+
+export const setOptions = (option) => ({
+  type: SET_FILTER_OPTION,
+  payload: { option }
+})
+
+export const addFavoriteMovie = (favoriteMovie) => ({
+  type: ADD_FAVORITE_MOVIE,
+  payload: { favoriteMovie }
+})
+
+export const removeFavoriteMovie = (favoriteMovie) => ({
+  type: REMOVE_FAVORITE_MOVIE,
+  payload: { favoriteMovie }
 })

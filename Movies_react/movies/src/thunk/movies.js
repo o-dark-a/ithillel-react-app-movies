@@ -34,10 +34,10 @@ export const fetchLanguages = () => {
   }
 }
 
-export const fetchFiltredMovies = (options) => {
+export const fetchFiltredMovies = (options, page) => {
   return async (dispatch) => {
     try {
-      const { data } = await getFiltredMovies(options);
+      const { data } = await getFiltredMovies(options, page);
       dispatch(loadMoviesSuccess(data));
     } catch(err) {
       dispatch(loadMoviesError(err));

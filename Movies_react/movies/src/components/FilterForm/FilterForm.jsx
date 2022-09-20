@@ -1,25 +1,22 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { setOptions } from "../../actions/moviesActions";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGenres, fetchLanguages, fetchFiltredMovies } from "../../thunk/movies";
 
 function FilterForm() {
-  const { allGenres, allLanguages } = useSelector((state) => state.movies);
-  const [options, setOptions] = useState({
-    query: '',
-    language: '',
-    with_genres: ''
-  });
+  const { allGenres, allLanguages, currentPage, filterOptions } = useSelector((state) => state.movies);
   const dispatch = useDispatch();
 
   const handleFilterChange = useCallback((e) => {
+    console.log('handleFilterChange')
     const { value, attributes: { dataoptiontype: { value: option } } } = e.target;
-    setOptions({ ...options, [option]: value });
-  }, [options]);
+    dispatch(setOptions({ [option]: value }));
+  }, [filterOptions]);
 
   const changeQuery = (e) => {
-    setOptions({ ...options, query: e.target.value });
+    dispatch(setOptions({ query: e.target.value }));
   }
 
   useEffect(() => {
@@ -28,16 +25,16 @@ function FilterForm() {
   }, []);
 
   useEffect(() => {
-    if (!(options.query === '' && options.language === '' && options.with_genres === '')) {
-      dispatch(fetchFiltredMovies(options));
+    if (!(filterOptions.query === '' && filterOptions.language === '' && filterOptions.with_genres === '')) {
+      dispatch(fetchFiltredMovies(filterOptions, currentPage));
     }
-  }, [options]);
+  }, [filterOptions]);
 
   return (
     <>
       <Box>
         <Typography level="body1">Search by name</Typography>
-        <input dataoptiontype='original_title' type="text" value={options.query} onChange={changeQuery} />
+        <input dataoptiontype='original_title' type="text" value={filterOptions.query} onChange={changeQuery} />
       </Box>
 
       <Box>

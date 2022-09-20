@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies } from "../thunk/movies";
+import { fetchMovies, fetchFiltredMovies } from "../thunk/movies";
+import { setPaginationPage } from "../actions/moviesActions";
 import MoviesListComponent from "../components/MoviesListComponent/MoviesListComponent";
 import NavbarComponent from "../components/NavbarComponent/NavbarComponent";
 import MoviesPagination from "../components/UI/Pagination/Pagination";
@@ -8,16 +9,20 @@ import SideBar from '../components/SideBar/SideBarComponent';
 import Grid from '@mui/material/Grid';
 
 function MoviesListPage() {
-  const { allMovies, totalPages } = useSelector((state) => state.movies);
-  const [currentPage, setCurrentPage] = useState(1);
+  const { allMovies, totalPages, currentPage, filterOptions, favoriteMovie } = useSelector((state) => state.movies);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovies(currentPage));
-  }, [dispatch, currentPage]);
+    const isFilterOption = Object.values(filterOptions).some(option => option !== '');
+    if (isFilterOption) {
+      dispatch(fetchFiltredMovies(filterOptions, currentPage));
+    } else {
+      dispatch(fetchMovies(currentPage));
+    }
+  }, [dispatch, currentPage, filterOptions, favoriteMovie]);
 
   function changeCurrentPage(_, pageNum) {
-    setCurrentPage(pageNum);
+    dispatch(setPaginationPage(pageNum));
   }
 
   return (
